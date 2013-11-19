@@ -30,7 +30,11 @@
         //  |____________|____  _____|
         //  |            |           |
         //  |  Workshop  |  Assembly |
-        //  |________________________|
+        //  |____   _________________|
+        //  |                        |
+        //  |         Garage         |
+        //  |                        |
+        //   ------------------------
         //
         
         Room *office = [[Room alloc] initWithName:@"Office"];
@@ -43,6 +47,11 @@
         
         Room *workshop = [[Room alloc] initWithName:@"Workshop"];
         [workshop setEastEntranceTo:assemblyRoom];
+        
+        
+        Room *garage = [[Room alloc] initWithName: @"Garage"];
+        [garage setNorthEntranceTo:workshop];
+        
         
         self.rooms = [NSSet setWithObjects:office, partsRoom, assemblyRoom, workshop, nil];
         

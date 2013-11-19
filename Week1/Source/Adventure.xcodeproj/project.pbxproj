@@ -31,6 +31,7 @@
 		66F88468182F2CA6005C51B6 /* AdventureCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F88467182F2CA6005C51B6 /* AdventureCellTests.m */; };
 		66F8846E182F2E6D005C51B6 /* AdventureViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F8846D182F2E6D005C51B6 /* AdventureViewControllerTests.m */; };
 		66F88479182F35B5005C51B6 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F88471182F35B5005C51B6 /* libOCMock.a */; };
+		CB7A5A3D183318CA000B7E9C /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7A5A3C183318CA000B7E9C /* Item.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,8 @@
 		66F88476182F35B5005C51B6 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
 		66F88477182F35B5005C51B6 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
 		66F88478182F35B5005C51B6 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
+		CB7A5A3B183318CA000B7E9C /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		CB7A5A3C183318CA000B7E9C /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +148,8 @@
 		6616E08517ECF5950059C221 /* Adventure */ = {
 			isa = PBXGroup;
 			children = (
+				CB7A5A3B183318CA000B7E9C /* Item.h */,
+				CB7A5A3C183318CA000B7E9C /* Item.m */,
 				66F8843E182EB769005C51B6 /* AdventureCell.h */,
 				66F8843F182EB769005C51B6 /* AdventureCell.m */,
 				66F88440182EB769005C51B6 /* AdventureCell.xib */,
@@ -334,6 +339,7 @@
 				6616E08C17ECF5950059C221 /* main.m in Sources */,
 				6616E09017ECF5950059C221 /* AppDelegate.m in Sources */,
 				6616E09F17ECF5D60059C221 /* AdventureViewController.m in Sources */,
+				CB7A5A3D183318CA000B7E9C /* Item.m in Sources */,
 				6661F6D218030A740006B25A /* Adventure.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +447,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Adventure/Adventure-Prefix.pch";
 				INFOPLIST_FILE = "Adventure/Adventure-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -452,6 +459,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Adventure/Adventure-Prefix.pch";
 				INFOPLIST_FILE = "Adventure/Adventure-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
