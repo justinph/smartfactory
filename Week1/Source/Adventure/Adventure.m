@@ -1,5 +1,7 @@
 #import "Adventure.h"
 #import "Room.h"
+#import "Item.h"
+
 
 @interface Adventure()
 
@@ -57,6 +59,12 @@
         
         // Start out in the office
         self.currentRoom = office;
+        
+        Item *shiv = [[Item alloc] initWithName:@"bloody shiv"];
+        NSString *myAction = [shiv itemAction];
+        NSLog(@"%@", myAction);
+        
+        
     }
     
     return self;

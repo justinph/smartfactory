@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "Item.h"
 
 /// Defines the directions for positioning adjacent rooms.
 ///
@@ -91,5 +92,8 @@ typedef enum : NSInteger {
 ///     is to its east.
 ///
 - (void)setWestEntranceTo:(Room *)room;
+
+
+- (void)setRoomItemTo:(Item *)item;
 
 @end
