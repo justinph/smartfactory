@@ -10,4 +10,21 @@
 
 @implementation Item
 
+- (id)initWithName:(NSString *)name
+{
+    self = [super init];
+    
+    if (self)
+    {
+        _name = name;
+    }
+    
+    return self;
+}
+
+- (NSString *)itemAction
+{
+    return [NSString stringWithFormat:@"You use the %@. Nothing happens.", self.name];
+}
+
 @end

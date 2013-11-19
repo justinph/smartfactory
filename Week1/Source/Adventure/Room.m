@@ -1,4 +1,5 @@
 #import "Room.h"
+#import "Item.h"
 
 @interface Room()
 
