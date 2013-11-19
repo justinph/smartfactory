@@ -11,14 +11,31 @@
 /// Registers the specified room and direction in our rooms dictionary.
 ///
 /// @param room
-///     The room to set as an adjacent room.
+///     The room to set as an adjacent room.w
 ///
 /// @param direction
 ///     The direction that specifies where the room is located.
 ///
 - (void)setRoom:(Room *)room forDirection:(RoomDirection)direction;
 
+
+@property (nonatomic, strong) NSMutableArray *items;
+
+///// Registers the specified room and direction in our rooms dictionary.
+/////
+///// @param room
+/////     The room to set as an adjacent room.
+/////
+///// @param direction
+/////     The direction that specifies where the room is located.
+/////
+- (void)addItem:(Item *)items;
+
+- (NSString*)availableItems;
+
 @end
+
+
 
 @implementation Room
 
@@ -62,6 +79,7 @@
     {
         _name = name;
         _rooms = [NSMutableDictionary dictionary];
+        _items = [NSMutableArray array];
     }
 
     return self;
@@ -73,6 +91,12 @@
 {
     [self.rooms setObject:room forKey:[NSNumber numberWithInteger:direction]];
 }
+
+- (void)addItem:(Item *)item
+{
+    [self.items addObject:item];
+}
+
 
 #pragma mark - Instance methods
 
@@ -105,11 +129,39 @@
     [room setRoom:self forDirection:RoomDirectionEast];
 }
 
+
 #pragma mark - NSObject
 
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"You are standing in the %@", self.name];
 }
+
+
+/**
+ Returns available items in room in a nice format.
+*/
+
+- (NSString *)availableItems
+{
+    NSUInteger count = [self.items count];
+    if (count > 0){
+        NSMutableString *itemsString = [NSMutableString string];
+        for (NSUInteger i = 0; i < count; i++) {
+            Item *myItem = [self.items objectAtIndex: i];
+            // myItem.name
+            [itemsString appendString:myItem.name];
+            
+            //if multiple items and not last item in array, add punctuation
+            if (count > 1 && i != (count-1)){
+                [itemsString appendString:@", "];
+            }
+        }
+        return [NSString stringWithFormat:@"You notice %@ here.", itemsString];
+    }
+  
+    return @"Nothing to see here.";
+}
+
 
 @end

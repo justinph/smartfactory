@@ -94,6 +94,8 @@ typedef enum : NSInteger {
 - (void)setWestEntranceTo:(Room *)room;
 
 
-- (void)setRoomItemTo:(Item *)item;
+- (void)addItem:(Item *)item;
+
+- (NSString *)availableItems;
 
 @end

@@ -26,6 +26,13 @@
     if (self)
     {
         
+        
+        // create some items
+        Item *shiv = [[Item alloc] initWithName:@"bloody shiv"];
+        Item *bottle = [[Item alloc]initWithName:@"broken bottle"];
+        Item *nail = [[Item alloc]initWithName:@"rusty nails"];
+        Item *chain = [[Item alloc]initWithName:@"greasy chain"];
+        
         //   ________________________
         //  |            |           |
         //  |   Office       Parts   |
@@ -40,6 +47,9 @@
         //
         
         Room *office = [[Room alloc] initWithName:@"Office"];
+        [office addItem:shiv];
+        [office addItem:bottle];
+
         
         Room *partsRoom = [[Room alloc] initWithName:@"Parts room"];
         [partsRoom setWestEntranceTo:office];
@@ -55,14 +65,22 @@
         [garage setNorthEntranceTo:workshop];
         
         
+
+        
+ 
+        
+        //put items in room
+        
+        
+        
         self.rooms = [NSSet setWithObjects:office, partsRoom, assemblyRoom, workshop, nil];
         
         // Start out in the office
         self.currentRoom = office;
         
-        Item *shiv = [[Item alloc] initWithName:@"bloody shiv"];
-        NSString *myAction = [shiv itemAction];
-        NSLog(@"%@", myAction);
+        
+//        //NSString *myAction = [shiv itemAction];
+//        //NSLog(@"%@", myAction);
         
         
     }
@@ -87,15 +105,25 @@
             if (room)
             {
                 self.currentRoom = room;
+                return [self.currentRoom description];
             }
             else
             {
                 return @"You can't go that way.";
             }
         }
+    } else if ([[components firstObject] isEqualToString:@"look"]){
+        
+        NSLog(@"%@", self.currentRoom);
+        
+        //Room *room  = [self.currentRoom roomForDirection:walkingDirection];
+        
+        return [self.currentRoom availableItems];
+        //return @"Things might be here, but you need to put your glasses on first.";
+        
     }
     
-    return [self.currentRoom description];
+    return @"You appear to be mumbling.";
 }
 
 @end
